@@ -1,1 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Robots inc.</title>
+</head>
 
+<body>
+  <style>
+    .zav {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       
+
+        form {
+            display: grid;
+            gap: 10px;
+        }
+
+        label {
+            color: #555;
+        }
+
+        input, select {
+            width: 480px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #successMessage {
+            text-align: center;
+            color: green;
+            margin-top: 10px;
+        }
+  </style>
+  <header>
+    <div class="logo">
+      <h1>RP Robot</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="novins.html">Новости</a></li>
+        <li><a href="inform.html">О нас</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <main>
+      <section class="about-company">
+        <div class="container">
+          <div class="company-info">
+            <h2>О нас</h2>
+            <p>RP Robot - ведущая компания в области разработки и производства робототехники. Мы создаем инновационные решения, которые меняют мир и облегчают повседневную жизнь людей. Наша миссия заключается в том, чтобы привносить передовые технологии и автоматизацию в различные отрасли, повышая эффективность и уровень безопасности.</p>
+          </div>
+          <div class="company-image">
+            <img src="https://hexagon.com/-/media/project/one-web/master-site/altudo/l1269/l1269/1680x885_spro-nestix_1.jpeg?h=885&iar=0&w=1680&hash=E10159D784AAD5713A80F72B0FBC1D60" alt="Company Image">
+          </div>
+        </div>
+      </section>
+      <section class="advantages">
+        <div class="container">
+          <h2>Основные преимущества и достижения</h2>
+          <ul class="advantages-list">
+            <li>
+              <strong>Инновационные технологии:</strong> Мы постоянно внедряем новейшие технологии в разработку наших роботов, что позволяет нам оставаться лидерами в сфере робототехники.
+            </li>
+            <li>
+              <strong>Широкий ассортимент продукции:</strong> Мы предлагаем большой выбор бытовых, промышленных роботов и экзоскелетов для различных целей и задач.
+            </li>
+            <li>
+              <strong>Высокое качество продукции:</strong> Наши роботы проходят строгий контроль качества, что обеспечивает надежность и долговечность в эксплуатации.
+            </li>
+            <li>
+              <strong>Мировые достижения:</strong> Наша компания удостоена множества наград и признаний за инновационные разработки и вклад в развитие робототехники.
+            </li>
+          </ul>
+        </div>
+      </section>
+    <section class="catalog-list scroll-active">
+      <div class="container">
+        <div class="category-filter">
+          <label for="category-select">Выберите категорию:</label>
+          <select id="category-select">
+            <option value="all">Все категории</option>
+            <option value="domestic-robots">Бытовые роботы</option>
+            <option value="industrial-robots">Промышленные роботы</option>
+            <option value="exoskeletons">Экзо-скелеты</option>
+          </select>
+          <button onclick="filterProducts()">Применить</button>
+        </div>
+
+        <div class="row products-row">
+          <div class="product-card" data-category="industrial-robots" data-name="Робот-рука с 7 осями">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img src="https://i.pinimg.com/originals/91/ce/6b/91ce6bdca494cbebb5803c5b9afa18c9.gif"
+                    alt="Изображение товара 1">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 1 043 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Робот-рука с 7 осями</div>
+              <div class="product-card_more">
+           
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card" data-category="industrial-robots" data-name="6 осевой робот">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img src="https://mirrobotics.ru/wp-content/uploads/2018/11/MH400_1.png" alt="Изображение товара 2">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 1 200 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">6 осевой робот</div>
+              <div class="product-card_more">
+            
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card" data-category="exoskeletons" data-name="Детский экзоскелеты">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img
+                    src="https://pharmmedprom.ru/wp-content/uploads/2021/03/exoatlet-ii_rvhzfs6.jpg"
+                    alt="Изображение товара 3">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 500 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Детский экзоскелеты </div>
+              <div class="product-card_more">
+             
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card" data-category="industrial-robots" data-name="Автомат. сварочный робот">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img src="https://weldingrobot.ru/wp-content/uploads/2023/08/202112100903013041.png"
+                    alt="Изображение товара 4">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 900 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Автомат. Cварочный робот</div>
+              <div class="product-card_more">
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row products-row">
+          <div class="product-card" data-category="exoskeletons" data-name="Экзоскелет для тяжестей">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img src="https://i.pinimg.com/originals/82/a4/2d/82a42d97f9bcfe9a3c025f7fe3502e59.jpg"
+                    alt="Изображение товара 5">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 1 200 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Экзоскелет для тяжестей</div>
+              <div class="product-card_more">
+               
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card" data-category="domestic-robots" data-name="Робот для стражи">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img src="https://i.pinimg.com/originals/bc/7c/2d/bc7c2dced036129b6f84f9dc861395fa.png"
+                    alt="Изображение товара 6">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 5 000 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Робот для стражи</div>
+              <div class="product-card_more">
+              
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card" data-category="domestic-robots" data-name="Робот помошник">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img
+                    src="https://static.wikia.nocookie.net/slenderfortress/images/4/4d/LibertyPrime.png/revision/latest?cb=20151031210809"
+                    alt="Изображение товара 7">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 1 400 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Робот помошник</div>
+              <div class="product-card_more">
+           
+              </div>
+            </div>
+          </div>
+
+
+          <div class="product-card" data-category="domestic-robots" data-name="Робот сортировщик">
+            <div class="product-card_front">
+              <div class="catalog-list_item-header product-card_header">
+                <a href="#">
+                  <img src="https://ae04.alicdn.com/kf/S7fcef37e49a345cc917336ea7a35b758s.jpg"
+                    alt="Изображение товара 8">
+                </a>
+              </div>
+            </div>
+            <div class="catalog-list__item-body product-card_body">
+              <div class="catalog-list_item-price product-card_price">От 1 350 000 ₽</div>
+              <div class="catalog-list_item-name product-card_name">Робот сортировщик</div>
+              <div class="product-card_more">
+         
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    <div class="zav">
+    <h1>Форма заказа</h1>
+    
+    <form id="orderForm" action="/submit-order" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        
+        <label for="contact">Контактная информация:</label>
+        <input type="text" id="contact" name="contact" required>
+        <br>
+
+        <label for="address">Адрес доставки:</label>
+        <input type="text" id="address" name="address" required>
+        <br>
+
+        <div class="form-group">
+            <label for="product">Выберите продукцию:</label>
+            <select id="product" name="product">
+                <option value="robot-arm">Робот-рука с 7 осями</option>
+                <option value="six-axis-robot">6 осевой робот</option>
+                <option value="child-exoskeleton">Детский экзоскелеты</option>
+                <option value="child-exoskeleton">Автомат. Cварочный робот</option>
+                <option value="child-exoskeleton">Экзоскелет для тяжестей</option>
+                <option value="child-exoskeleton">Робот для стражи</option>
+                <option value="child-exoskeleton">Робот помошник</option>
+                <option value="child-exoskeleton">Робот сортировщик</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Количество:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+        </div>
+
+        <button type="submit" class="btn">Отправить заказ</button>
+    </form>
+
+    <div id="successMessage" style="display: none; color: green;">Заказ успешно отправлен!</div>
+
+  </div>
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 contacts_col--left order-lg-1">
+            <div class="contacts_title title-h2">
+              <h2>Наши контакты</h2>
+            </div>
+            <p class="contacts_descr text_reset">
+            <h3>Задайте вопросы по телефону или почте</h3>
+            </p>
+            <div class="contacts_info">
+              <ul class="contacts_info-list">
+                <li class="contacts_info-item">
+                  <div class="contacts_info-wrapper">
+                    <div class="contacts_info-wrapper-icon"><strong>Номер телефона:</strong></div>
+                    <a href="#" class="contacts_info-link">+7 852 654-43-76</a>
+                  </div>
+                </li>
+                <li class="contacts_info-item">
+                  <div class="contacts_info-wrapper">
+                    <div class="contacts_info-wrapper-icon"><strong>Email:</strong></div>
+                    <a href="#" class="contacts_info-link">info@ishi.ru</a>
+                  </div>
+                </li>
+                <li class="contacts_info-item">
+                  <div class="contacts_info-wrapper">
+                    <div class="contacts_info-wrapper-icon"></div>
+                    <address>
+                      <strong>Наш адрес:</strong><br>
+                      г. Магнитогорск, ул. Мурманский 21
+                    </address>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+  
+
+  <footer class="footer">
+    <div class="footer_container">
+      <h2 class="section_title">ДОКУМЕНТАЦИЯ
+        <div class="section_head_border"></div>
+      </h2>
+      <div class="documentation">
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Техническое руководство
+            <p class="size_file">3.4 Mb* .pdf</p>
+          </span>
+        </a>
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Инструкция по установке
+            <p class="size_file">3.4 Mb* .pdf</p>
+          </span>
+        </a>
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Инструкция по датчику температуры
+            <p class="size_file">2.5 Mb* .pdf</p>
+          </span>
+        </a>
+        <a href="" class="documentation_link">
+          <i class="item"></i>
+          <span>Инструкция по датчику Холла
+            <p class="size_file">2.5 Mb* .pdf</p>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="footer_border"></div>
+    <div class="footer_container">
+      <div class="nav">
+        <a class="logo_link" href="#">
+          <img src="./img/logo.svg" alt="">
+        </a>
+        <div class="footer_address">
+          <p class="footer_address_title">Контакты</p>
+          <address>
+            <ul class="contact_list">
+              <li class="contact_item">
+                <i></i>
+                109518, г. Москва ул. Грайвороновская, д.23
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-02-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-12-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-14-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link emaill" href="#">
+                  <i></i>
+                  info@npo-at.ru
+                </a>
+              </li>
+            </ul>
+            <ul class="contact_list">
+              <li class="contact_item">
+                <i></i>
+                455048, г. Магнитогорск пер. Мурманский д. 21
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link" href="#">
+                  <i></i>
+                  +7 495 226-12-99
+                </a>
+              </li>
+              <li class="contact_item">
+                <a class="contact_item_link emaill" href="#">
+                  <i></i>
+                  sales@npo-at.ru
+                </a>
+              </li>
+              <ul class="contact_list_link">
+                <li>
+                  <a href="#">
+                    <img src="./img/teleg.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./img/Youtube.svg" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="./img/VK.svg" alt="">
+                  </a>
+                </li>
+                </ui>
+              </ul>
+          </address>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const form = document.getElementById('orderForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        setTimeout(function() {
+            form.reset(); 
+            successMessage.style.display = 'block'; 
+        }, 2000);
+    });
+</script>
+  <script>
+
+    function filterProducts() {
+      const selectedCategory = document.getElementById('category-select').value;
+
+
+      const productCards = document.querySelectorAll('.product-card');
+
+
+      productCards.forEach(card => {
+        const category = card.dataset.category;
+        if (selectedCategory === 'all' || category === selectedCategory) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+
+    function showAllProducts() {
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        card.style.display = 'block';
+      });
+    }
+
+    window.onload = showAllProducts;
+    
+  </script>
+  <script>
+function addDescriptionToProducts() {
+    const products = [
+        {
+            name: 'Робот-рука с 7 осями',
+            description: ' Промышленный робот-рука с 7 осями, идеально подходит для выполнения сложных задач в автоматизированном производстве.',
+        },
+        {
+            name: '6 осевой робот',
+            description: ' Промышленный робот-рука с 6-осьмовый робот обладает широким спектром применения в промышленности благодаря высокой грузоподъемности и скорости работы.',
+        },
+        {
+            name: 'Детский экзоскелеты',
+            description: ' Экзоскелет для детей, помогающий развивать моторику и поддерживать правильную осанку.',
+        },
+        {
+            name: 'Автомат. сварочный робот',
+            description: ' Промышленный автоматизированный сварочный робот предназначен для выполнения точных сварочных работ на производстве, обеспечивая высокую эффективность и качество сварки.',
+        },
+        {
+            name: 'Экзоскелет для тяжестей',
+            description: ' Экзоскелет для поднятия тяжестей специально разработан для снижения физической нагрузки на работника при подъеме и перемещении грузов, повышая производительность и безопасность труда.',
+        },
+        {
+            name: 'Робот для стражи',
+            description: '  Робот для стражи представляет собой автономного охранного робота, оборудованного современными средствами видеонаблюдения и датчиками для обеспечения безопасности территории и контроля доступа.',
+        },
+        {
+            name: 'Робот помошник',
+            description: ' Робот-помощник предназначен для выполнения разнообразных задач в бытовых и офисных условиях, обеспечивая поддержку и помощь в повседневных делах и операциях.',
+        },
+        {
+            name: 'Робот сортировщик',
+            description: ' Робот-сортировщик представляет собой автоматизированное устройство для сортировки и размещения объектов по определенным критериям, улучшая процессы складирования и логистики.',
+        },
+    ];
+
+    products.forEach(product => {
+        const productCard = document.querySelector(`.product-card[data-name="${product.name}"]`);
+        const productCardBody = productCard.querySelector('.product-card_body');
+        
+        const descriptionParagraph = document.createElement('p');
+        descriptionParagraph.textContent = product.description;
+
+        productCardBody.appendChild(document.createElement('h4')).textContent = 'Описание:';
+        productCardBody.appendChild(descriptionParagraph);
+    });
+}
+
+window.onload = addDescriptionToProducts;
+  </script>
+  <script>
+    
+  </script>
+</body>
+</html>
